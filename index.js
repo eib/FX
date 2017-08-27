@@ -1,4 +1,4 @@
-const animitter = require('animitter');
+const createAnimitter = require('animitter/index.js');
 
 class FX {
     constructor(ctx) {
@@ -9,7 +9,7 @@ class FX {
         this.isPlaying = false;
         this.isPaused = false;
 
-        this.loop = animitter((frameCount, deltaTime) => {
+        this.loop = createAnimitter((frameCount, deltaTime) => {
             const tick = {
                 frames: frameCount,
                 deltaMillis: deltaTime,
