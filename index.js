@@ -1,6 +1,7 @@
 const createAnimitter = require('animitter/index.js');
 
 class FX {
+    static inject() { return [CanvasRenderingContext2D]; }
     constructor(ctx) {
         this.ctx = ctx;
         this.elapsedTime = 0;
