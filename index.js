@@ -10,15 +10,15 @@ class FX {
         this.isPlaying = false;
         this.isPaused = false;
 
-        this.loop = createAnimitter((frameCount, deltaTime) => {
+        this.loop = createAnimitter((deltaTime, elapsedTime, frameCount) => {
             const tick = {
                 frames: frameCount,
                 deltaMillis: deltaTime,
-                totalMillis: this.elapsedTime + deltaTime
+                totalMillis: elapsedTime,
             };
             this.update(tick);
             this.render(this.ctx, tick);
-            this.elapsedTime += deltaTime;
+            this.elapsedTime = elapsedTime;
         });
     }
 
