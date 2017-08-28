@@ -76,7 +76,7 @@ class FX {
     }
 
     pruneTerminatedObjects() {
-        [this.renderables, this.updatables].forEach(function (collection, ii) {
+        [this.renderables, this.updatables].forEach(collection => {
             for (let ii = collection.length - 1; ii >= 0; ii--) {
                 let obj = collection[ii];
                 if (obj.isTerminated) {
